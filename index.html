@@ -19,6 +19,8 @@
       --text-secondary: #8FA8C8;
       --gold: #FFB340;
       --blue: #4A90E2;
+      --coral: #FF6B35;
+      --teal: #00D4D4;
       --border: rgba(143, 168, 200, 0.16);
       --radius: 18px;
       --maxw: 1120px;
@@ -206,6 +208,35 @@
     .final-waitlist-btn { display: inline-block; text-decoration: none; }
 
     /* Footer */
+    /* Feedback / contact */
+    .feedback {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 0;
+      text-align: center;
+    }
+    .feedback h2 {
+      font-size: 34px; font-weight: 800; letter-spacing: -0.6px; margin-bottom: 12px;
+    }
+    .feedback h2 span { color: var(--coral); }
+    .feedback p {
+      font-size: 17px; color: var(--text-secondary);
+      max-width: 480px; margin: 0 auto 28px;
+    }
+    .feedback-btn {
+      display: inline-block; text-decoration: none;
+      background: var(--coral); color: #1A2B4A;
+      font-weight: 800; font-size: 16px;
+      padding: 15px 34px; border-radius: 999px;
+      border: 1px solid var(--coral);
+      transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+    }
+    .feedback-btn:hover {
+      transform: translateY(-2px);
+      background: var(--teal); border-color: var(--teal); color: #1A2B4A;
+    }
+
     footer.site { border-top: 1px solid var(--border); background: var(--bg-2); padding: 40px 0; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .footer-brand { display: flex; align-items: center; gap: 9px; font-weight: 800; }
@@ -400,7 +431,16 @@
     </div>
   </section>
 
-  <!-- ── 5. Footer ── -->
+  <!-- ── 5. Feedback / contact ── -->
+  <section class="feedback" id="feedback">
+    <div class="wrap">
+      <h2>Share Your <span>Thoughts</span></h2>
+      <p>We'd love to hear from you — questions, feedback, or just want to say hi.</p>
+      <a class="feedback-btn" href="mailto:anchoradhd.app@gmail.com?subject=Anchor%3A%20ADHD%20Feedback">Send Feedback</a>
+    </div>
+  </section>
+
+  <!-- ── 6. Footer ── -->
   <footer class="site">
     <div class="wrap footer-inner">
       <div class="footer-brand">
