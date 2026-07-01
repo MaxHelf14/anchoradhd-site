@@ -161,6 +161,39 @@
     /* Real screenshots fill the entire screen area (no placeholder styling). */
     img.phone-screen { object-fit: cover; object-position: top center; border: none; background: none; display: block; padding: 0; }
 
+    /* See it in action — white section with a horizontal phone-mockup row */
+    .showcase { background: #FFFFFF; padding: 72px 0; }
+    .showcase-title { text-align: center; color: #1A1A1A; font-size: 34px; font-weight: 800; letter-spacing: -0.6px; margin: 0 0 44px; }
+    .showcase-row {
+      display: flex; gap: 28px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 6px 4px 26px;
+    }
+    .showcase-row::-webkit-scrollbar { height: 8px; }
+    .showcase-row::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 999px; }
+    .showcase-phone {
+      flex: 0 0 auto;
+      width: 250px; margin: 0;
+      aspect-ratio: 390 / 844;        /* iPhone 9 : 19.5 */
+      background: #111318;            /* iPhone bezel */
+      border-radius: 40px;
+      padding: 9px;
+      box-shadow: 0 16px 38px rgba(26,26,26,0.16);
+      scroll-snap-align: center;
+    }
+    .showcase-phone img,
+    .showcase-phone .ph-placeholder {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      border-radius: 31px; display: block;
+    }
+    .showcase-phone .ph-placeholder { background: #FFF1EA; }
+    /* Desktop: show exactly 3 phones at once; the rest scroll horizontally. */
+    @media (min-width: 900px) {
+      .showcase-phone { width: calc((100% - 56px) / 3); }
+    }
+
     /* Final CTA */
     .final { padding: 96px 0; text-align: center; position: relative; }
     .final::before {
@@ -343,6 +376,21 @@
         <div class="proof-stat"><span>AI</span> Coach</div>
         <span class="proof-dot">●</span>
         <div class="proof-stat"><span>Real</span> Community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── See it in action ── -->
+  <section class="showcase">
+    <div class="wrap">
+      <h2 class="showcase-title">See it in action</h2>
+      <div class="showcase-row">
+        <figure class="showcase-phone"><img src="screenshots/checkins.png" alt="Daily check-ins with mood, energy, motivation, and streak" loading="lazy" /></figure>
+        <figure class="showcase-phone"><img src="screenshots/routines.png" alt="Routines calendar day view" loading="lazy" /></figure>
+        <figure class="showcase-phone"><img src="screenshots/focus.png" alt="Focus timer with a growing plant" loading="lazy" /></figure>
+        <figure class="showcase-phone"><img src="screenshots/insights.png" alt="Insights with mood, motivation, and energy trends" loading="lazy" /></figure>
+        <figure class="showcase-phone"><img src="screenshots/ranking.png" alt="XP, levels, and ranks" loading="lazy" /></figure>
+        <figure class="showcase-phone"><img src="screenshots/community.png" alt="Community feed and groups" loading="lazy" /></figure>
       </div>
     </div>
   </section>
