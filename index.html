@@ -70,16 +70,9 @@
     /* Hero — coral→amber→teal gradient matching the app icon */
     .hero {
       position: relative; text-align: center; padding: 84px 0 72px;
-      background: linear-gradient(180deg, #FF6B35 0%, #FFA04A 45%, #1BBFBF 100%);
+      background: linear-gradient(180deg, #FF6B35 0%, #1BBFBF 100%);
     }
     .hero .wrap { position: relative; z-index: 1; }
-    .hero-anchor {
-      width: 100px; height: 100px; margin: 0 auto 26px;
-      border-radius: 24px; overflow: hidden;
-      border: 3px solid rgba(255,255,255,0.9);
-      box-shadow: 0 16px 44px rgba(0,0,0,0.30);
-    }
-    .hero-anchor img { width: 100%; height: 100%; display: block; }
     /* App-icon logo used in the nav + footer brand */
     .brand-icon { width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0; display: block; }
     h1.hero-title {
@@ -97,8 +90,8 @@
       color: #FFFFFF; background: rgba(26,43,74,0.22);
       border-color: rgba(255,255,255,0.55);
     }
-    .hero .waitlist-btn { background: #FFFFFF; color: var(--coral); }
-    .hero .waitlist-btn:hover { background: #FFFFFF; color: var(--coral-hover); }
+    .hero .waitlist-btn { background: var(--coral); color: #FFFFFF; }
+    .hero .waitlist-btn:hover { background: var(--coral-hover); color: #FFFFFF; }
 
     /* Hero + footer social icons */
     .social-row { display: flex; align-items: center; justify-content: center; gap: 14px; }
@@ -191,12 +184,12 @@
     .waitlist-form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .waitlist-input {
       flex: 1 1 280px; min-width: 0; max-width: 360px;
-      background: var(--card); border: 1px solid var(--border); border-radius: 999px;
-      color: var(--text); font-size: 16px; font-family: inherit;
+      background: #FFFFFF; border: 1px solid rgba(0,0,0,0.12); border-radius: 999px;
+      color: #1A2B4A; font-size: 16px; font-family: inherit;
       padding: 14px 22px; outline: none;
       transition: border-color .15s ease;
     }
-    .waitlist-input::placeholder { color: var(--text-secondary); }
+    .waitlist-input::placeholder { color: #5A7A9A; }
     .waitlist-input:focus { border-color: var(--coral); }
     .waitlist-btn {
       background: var(--coral); color: #1A2B4A; font-weight: 800; font-size: 16px;
@@ -301,9 +294,6 @@
   <!-- ── 1. Hero ── -->
   <section class="hero" id="download">
     <div class="wrap">
-      <div class="hero-anchor">
-        <img src="icon.png" alt="Anchor: ADHD app icon" />
-      </div>
       <h1 class="hero-title">Anchor: ADHD</h1>
       <p class="hero-tagline">Built for the ADHD brain. Finally.</p>
       <p class="hero-sub">Evidence-based tools, AI coaching, and a community that gets it — all in one app.</p>
