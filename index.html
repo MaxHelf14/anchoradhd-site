@@ -16,19 +16,22 @@
       --bg-2: #15233E;
       --card: #243656;
       --text: #FFFFFF;
-      --text-secondary: #8FA8C8;
+      --text-secondary: rgba(255,255,255,0.82);
       --blue: #4A90E2;
       --coral: #FF6B35;
       --coral-hover: #FF9A3C;
       --teal: #00D4D4;
-      --border: rgba(143, 168, 200, 0.16);
+      --border: rgba(255,255,255,0.20);
       --radius: 18px;
       --maxw: 1120px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: #1BBFBF; }
     body {
-      background: var(--bg);
+      /* One continuous coral→teal gradient spanning the whole page. */
+      background: linear-gradient(180deg, #FF6B35 0%, #FF9A3C 40%, #1BBFBF 100%);
+      background-repeat: no-repeat;
+      min-height: 100vh;
       color: var(--text);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
@@ -39,22 +42,22 @@
     .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
     .eyebrow {
       font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--coral);
+      color: rgba(255,255,255,0.9);
     }
 
     /* Coming-soon text (replaces the download buttons) */
     .coming-soon {
       display: inline-block;
-      color: var(--coral); font-weight: 800; font-size: 20px; letter-spacing: 0.3px;
+      color: #FFFFFF; font-weight: 800; font-size: 20px; letter-spacing: 0.3px;
       padding: 14px 28px; border-radius: 999px;
-      background: rgba(255,107,53, 0.10);
-      border: 1px solid rgba(255,107,53, 0.40);
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
     /* Header */
     header.nav {
       position: sticky; top: 0; z-index: 20;
-      background: rgba(26, 43, 74, 0.82);
+      background: rgba(0,0,0,0.12);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -70,7 +73,7 @@
     /* Hero — clean two-stop coral→teal gradient */
     .hero {
       position: relative; text-align: center; padding: 84px 0 72px;
-      background: linear-gradient(180deg, #FF6B35 0%, #1BBFBF 100%);
+      background: transparent; /* shows the page-wide body gradient */
     }
     .hero .wrap { position: relative; z-index: 1; }
     /* App-icon logo used in the nav + footer brand */
@@ -99,7 +102,7 @@
     .social-link {
       display: inline-flex; align-items: center; justify-content: center;
       width: 46px; height: 46px; border-radius: 50%;
-      background: var(--card); border: 1px solid var(--border);
+      background: rgba(255,255,255,0.15); border: 1px solid var(--border);
       color: var(--text-secondary);
       transition: transform .15s ease, color .15s ease, border-color .15s ease, background .15s ease;
     }
@@ -110,12 +113,12 @@
     .social-link svg { width: 22px; height: 22px; }
 
     /* Social proof */
-    .proof { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-2); }
+    .proof { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: transparent; }
     .proof-inner { padding: 30px 0; text-align: center; }
     .proof-label { color: var(--text-secondary); font-size: 14px; font-weight: 600; margin-bottom: 18px; }
     .proof-stats { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
     .proof-stat { font-size: 17px; font-weight: 800; }
-    .proof-stat span { color: var(--coral); }
+    .proof-stat span { color: #FFFFFF; }
     .proof-dot { color: var(--border); font-size: 14px; }
 
     /* Features */
@@ -127,7 +130,7 @@
     .feature-text { flex: 1; }
     .feature-text .tag {
       display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-      color: var(--teal); background: rgba(0,212,212,0.12); border: 1px solid rgba(0,212,212,0.28);
+      color: #FFFFFF; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.35);
       padding: 5px 12px; border-radius: 999px; margin-bottom: 18px;
     }
     .feature-text h3 { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.18; margin-bottom: 14px; }
@@ -173,7 +176,7 @@
 
     /* Waitlist */
     .waitlist {
-      background: var(--bg-2);
+      background: transparent;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       padding: 80px 0;
@@ -200,7 +203,7 @@
     .waitlist-btn:hover { transform: translateY(-1px); background: var(--coral-hover); }
     .waitlist-btn:disabled { opacity: 0.6; cursor: default; transform: none; }
     .waitlist-msg { min-height: 22px; margin-top: 18px; font-size: 15px; font-weight: 600; }
-    .waitlist-msg.success { color: var(--coral); }
+    .waitlist-msg.success { color: #FFFFFF; }
     .waitlist-msg.info { color: var(--text); }
     .waitlist-msg.error { color: #FF8FA0; }
     /* Waitlist moved into the hero as the primary CTA */
@@ -211,7 +214,7 @@
     /* Footer */
     /* Feedback / contact */
     .feedback {
-      background: var(--bg-2);
+      background: transparent;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       padding: 72px 0;
@@ -238,7 +241,7 @@
       background: var(--teal); border-color: var(--teal); color: #1A2B4A;
     }
 
-    footer.site { border-top: 1px solid var(--border); background: var(--bg-2); padding: 40px 0; }
+    footer.site { border-top: 1px solid var(--border); background: #0D9BAB; padding: 40px 0; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .footer-brand { display: flex; align-items: center; gap: 9px; font-weight: 800; }
     .footer-links { display: flex; align-items: center; gap: 20px; }
