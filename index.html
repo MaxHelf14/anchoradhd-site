@@ -26,12 +26,14 @@
       --maxw: 1120px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: #1BBFBF; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    /* One continuous coral→teal gradient, fixed to the viewport so coral stays
+       at the top and teal at the bottom no matter how tall the page is. */
+    html, body {
+      min-height: 100%;
+      background: linear-gradient(180deg, #FF6B35 0%, #FF9A3C 35%, #1BBFBF 100%) fixed;
+    }
     body {
-      /* One continuous coral→teal gradient spanning the whole page. */
-      background: linear-gradient(180deg, #FF6B35 0%, #FF9A3C 40%, #1BBFBF 100%);
-      background-repeat: no-repeat;
-      min-height: 100vh;
       color: var(--text);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
@@ -275,6 +277,13 @@
       .feature-visual { flex: 0 0 auto; width: 100%; }
       .footer-inner { justify-content: center; text-align: center; }
     }
+
+    /* ── Force the fixed body gradient to show through everything ── */
+    section, div, header, footer { background: transparent !important; }
+    /* Navbar keeps a subtle dark overlay for legibility */
+    header.nav { background: rgba(0,0,0,0.15) !important; }
+    /* Phone mockups keep their dark device frame */
+    .phone, .phone::before { background: #0F1B30 !important; }
   </style>
 </head>
 <body>
